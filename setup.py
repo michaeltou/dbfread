@@ -21,7 +21,7 @@ elif sys.argv[-1] == "docs":
     sys.exit()
 
 setup(
-    name='dbfread',
+    name='dbfreaddm',
     version=dbfread.__version__,
     description='Read DBF Files with Python',
     long_description=open('README.rst', 'rt').read(),

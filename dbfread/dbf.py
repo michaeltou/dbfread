@@ -178,7 +178,13 @@ class DBF(object):
 
         """
         if not self.loaded:
-            self._records = list(self._iter_records(b' '))
+            '''
+              changed by douming on 2025/02/27.
+              reason: 
+              原来的self._records 只包含list(self._iter_records(b' ')) 的记录。
+              需要把list(self._iter_records(bytes.fromhex('00'))) 也包含进来。
+            '''
+            self._records = list(self._iter_records(b' ')) + list(self._iter_records(bytes.fromhex('00')))
             self._deleted = list(self._iter_records(b'*'))
 
     def unload(self):
