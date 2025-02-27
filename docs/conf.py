@@ -14,8 +14,8 @@ import sys, os
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('..'))
-import dbfread
-from dbfread import __version__
+import dbfreaddm
+from dbfreaddm import __version__
 
 # -- General configuration -----------------------------------------------------
 
@@ -47,7 +47,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'dbfread'
+project = u'dbfreaddm'
 copyright = u'Ole Martin Bjørndalen'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -190,7 +190,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'dbfread.tex', u'dbfread Documentation',
+  ('index', 'dbfreaddm.tex', u'dbfreaddm Documentation',
    u'Ole Martin Bjørndalen', 'manual'),
 ]
 
@@ -220,7 +220,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'dbfread', u'dbfread Documentation',
+    ('index', 'dbfreaddm', u'dbfreaddm Documentation',
      [u'Ole Martin Bjørndalen'], 1)
 ]
 
@@ -234,8 +234,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'dbfread', u'dbfread Documentation',
-   u'Ole Martin Bjørndalen', 'dbfread', 'Read DBF files with Python',
+  ('index', 'dbfreaddm', u'dbfreaddm Documentation',
+   u'Ole Martin Bjørndalen', 'dbfreaddm', 'Read DBF files with Python',
    'Miscellaneous'),
 ]
 

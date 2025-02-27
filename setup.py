@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
-import dbfread
+import dbfreaddm
 
 try:
     from setuptools import setup
@@ -22,19 +22,19 @@ elif sys.argv[-1] == "docs":
 
 setup(
     name='dbfreaddm',
-    version=dbfread.__version__,
+    version=dbfreaddm.__version__,
     description='Read DBF Files with Python',
     long_description=open('README.rst', 'rt').read(),
-    author=dbfread.__author__,
-    author_email=dbfread.__email__,
-    url=dbfread.__url__,
+    author=dbfreaddm.__author__,
+    author_email=dbfreaddm.__email__,
+    url=dbfreaddm.__url__,
     package_data={'': ['LICENSE']},
-    package_dir={'dbfread': 'dbfread'},
-    packages = ['dbfread'],
+    package_dir={'dbfreaddm': 'dbfreaddm'},
+    packages = ['dbfreaddm'],
     include_package_data=True,
     zip_safe=True,
     install_requires=[],
-    python_requires='>=2.7.*, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
     license='MIT',
     classifiers=(
         'Development Status :: 5 - Production/Stable',

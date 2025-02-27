@@ -3,7 +3,7 @@ Tests reading from database.
 """
 import datetime
 from pytest import fixture
-from dbfread import DBF
+from dbfreaddm import DBF
 
 @fixture
 def table():

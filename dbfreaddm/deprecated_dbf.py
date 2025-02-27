@@ -45,12 +45,12 @@ class DeprecatedDBF(DBF, list):
 
 
 def read(filename, load=True, **kwargs):
-    warnings.warn("dbfread.read() has been replaced by DBF(load=True)"
+    warnings.warn("dbfreaddm.read() has been replaced by DBF(load=True)"
                   " and will be removed in 2.2.")
     return DeprecatedDBF(filename, load=True, **kwargs)
 
 
 def open(filename, load=True, **kwargs):
-    warnings.warn("dbfread.open() has been replaced by DBF()"
+    warnings.warn("dbfreaddm.open() has been replaced by DBF()"
                   " and will be removed in 2.2.")
     return DeprecatedDBF(filename, load=True, **kwargs)

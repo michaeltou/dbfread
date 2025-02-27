@@ -5,6 +5,6 @@ __pycache__
 .cache/
 .tox/
 /docs/_build/
-/dist/
+
 /build/
 /*.egg-info/

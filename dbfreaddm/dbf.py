@@ -178,13 +178,7 @@ class DBF(object):
 
         """
         if not self.loaded:
-            '''
-              changed by douming on 2025/02/27.
-              reason: 
-              原来的self._records 只包含list(self._iter_records(b' ')) 的记录。
-              需要把list(self._iter_records(bytes.fromhex('00'))) 也包含进来。
-            '''
-            self._records = list(self._iter_records(b' ')) + list(self._iter_records(bytes.fromhex('00')))
+            self._records = list(self._iter_records(b' '))
             self._deleted = list(self._iter_records(b'*'))
 
     def unload(self):
@@ -292,7 +286,11 @@ class DBF(object):
 
             while True:
                 sep = infile.read(1)
-                if sep == record_type:
+                ''' 
+                 changed by douming on 2025/02/27.
+                 reason:  如果传入record_type为b' '(代表获取非删除记录，则把b'\x00'也加入到判断条件中。) 
+               '''
+                if sep == record_type or (record_type == b' ' and sep == b'\x00'):
                     count += 1
                     self._skip_record(infile)
                 elif sep in (b'\x1a', b''):
@@ -323,8 +321,11 @@ class DBF(object):
 
             while True:
                 sep = read(1)
-
-                if sep == record_type:
+                ''' 
+                  changed by douming on 2025/02/27.
+                  reason:  如果传入record_type为b' '(代表获取非删除记录，则把b'\x00'也加入到判断条件中。) 
+                '''
+                if sep == record_type or (record_type == b' ' and sep == b'\x00'):
                     items = [
                         (field.name, parse(field, read(field.length)))
                         for field in self.fields

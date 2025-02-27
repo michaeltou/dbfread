@@ -2,7 +2,7 @@
 Add custom field parsing by subclassing FieldParser.
 """
 
-from dbfread import DBF, FieldParser
+from dbfreaddm import DBF, FieldParser
 
 class CustomFieldParser(FieldParser):
     def parseC(self, field, data):
